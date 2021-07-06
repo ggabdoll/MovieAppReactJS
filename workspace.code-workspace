@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://wsl+ubuntu/mnt/c/Bitnami/wampstack-8.0.3-0/php"
+		},
+		{
+			"uri": "vscode-remote://wsl+ubuntu/mnt"
+		}
+	],
+	"remoteAuthority": "wsl+Ubuntu",
+	"settings": {}
+}
