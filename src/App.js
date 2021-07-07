@@ -1,25 +1,65 @@
 import logo from './logo.svg';
 import './App.css';
+import { nativeTouchData } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
 
-function Food({fav}) {
-  return <h1> I like {fav}</h1>;
+function Food({name, picture}) {
+  return (
+    <div>
+      <h2> I like {name}</h2>
+      <img src = {picture} alt = {name}/>
+    </div>
+  );
 }
 
 //각 props을 component의 argument로 넣어서 jsx를 불러 올 수 있다.  
 
+const foodILike = [
+  {
+    id: 1,
+    name: "Kimchi",
+    image:
+      "http://aeriskitchen.com/wp-content/uploads/2008/09/kimchi_bokkeumbap_02-.jpg"
+  },
+  {
+    id: 2,
+    name: "Samgyeopsal",
+    image:
+      "https://3.bp.blogspot.com/-hKwIBxIVcQw/WfsewX3fhJI/AAAAAAAAALk/yHxnxFXcfx4ZKSfHS_RQNKjw3bAC03AnACLcBGAs/s400/DSC07624.jpg"
+  },
+  {
+    id: 3,
+    name: "Bibimbap",
+    image:
+      "http://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/recipes/ck/12/03/bibimbop-ck-x.jpg?itok=RoXlp6Xb"
+  },
+  {
+    id: 4,
+    name: "Doncasu",
+    image:
+      "https://s3-media3.fl.yelpcdn.com/bphoto/7F9eTTQ_yxaWIRytAu5feA/ls.jpg"
+  },
+  {
+    id: 5,
+    name: "Kimbap",
+    image:
+      "http://cdn2.koreanbapsang.com/wp-content/uploads/2012/05/DSC_1238r-e1454170512295.jpg"
+  }
+];
+
+function renderFood(dish) {
+  return <Food name = {dish.name} picture = {dish.image} />
+    
+
+}
+
 function App() {
   return (
-    <div className="App">
-      
-     <h1>hello!!!</h1> 
-     <Food fav = "kimchi" 
-           fav = "hamberger"
-           fav = "떡볶이"
-           fav = "pizza"
-           fav = "you"
-           />
-    </div>
+  <div>
+    {foodILike.map(dish => (
+      <Food key = {dish.id} name = {dish.name} picture = {dish.image} />
+    ))}
+  </div>
   );
 }
 
