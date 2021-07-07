@@ -1,13 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-import Potato from './Potato';
+
+
+function Food({fav}) {
+  return <h1> I like {fav}</h1>;
+}
+
+//각 props을 component의 argument로 넣어서 jsx를 불러 올 수 있다.  
 
 function App() {
   return (
     <div className="App">
       
      <h1>hello!!!</h1> 
-     <Potato />
+     <Food fav = "kimchi" 
+           fav = "hamberger"
+           fav = "떡볶이"
+           fav = "pizza"
+           fav = "you"
+           />
     </div>
   );
 }
